@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+header {
+  width: 1248px;
+  float: right;
+}
+nav {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 0 80px 0 0;
+}
+.notification {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.notification:hover{
+    background-color: rgba(13,18,22,0.06);
+    transition: 0.4s;
+}
+.badge {
+  font-family: "Inter", sans-serif;
+  width: 15px;
+  height: 16px;
+  background-color: red;
+  color: white;
+  font-size: 10px;
+  border-radius: 50%;
+  padding: 4px 8px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 7px;
+  left: 19px;
+}
+.user-part {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.user-avatar {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  width: 35px;
+  height: 35px;
+  background-color: #0085ff1a;
+  color: #0085ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+.user-name {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+}
+.page-property {
+  width: 338px;
+  height: 48px;
+  padding: 8px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.page-property .navbar-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 35px;
+  border-radius: 2px;
+  background-color: #1e0202;
+  color: rgba(255, 255, 255);
+}
+.page-property .orientation {
+  display: flex;
+}
+.orientation .manufacturing,
+.subcategory {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+}
+.orientation .manufacturing,
+.subcategory p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+.login a {
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
