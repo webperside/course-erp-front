@@ -1,7 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { faAngleRight , faBars} from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
 const Navbar = () => {
   const userData = {
@@ -15,9 +15,14 @@ const Navbar = () => {
     <header role="banner">
     <nav>
       <div className="page-property">
+      <div className="side-menu">
+        <FontAwesomeIcon icon={faBars} size="xl" style={{color: "#000000",}} />
+        </div>
         <div className="navbar-icon">
           <span>A</span>
+          <p>ABC</p>
         </div>
+        
         <div className="orientation">
           <div className="manufacturing">
             <FontAwesomeIcon
