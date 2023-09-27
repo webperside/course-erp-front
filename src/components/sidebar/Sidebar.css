@@ -37,6 +37,10 @@ a{
     align-items: center;
     padding-top: 1.5px;
 }
+.sidebar-open{
+    margin-top: 24px;
+    margin-left: 25px;
+}
 .sidebar-close, .sidebar-open{
     display: inline-flex;
     align-items: center;
