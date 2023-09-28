@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+.sidebar-main{
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 264px;
+    height: 100vh;
+    box-shadow: 0px 1px 3px 0px #00000033;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+    background-color: #fff;
+    transform: translateX(-100%);
+    transition: transform 0.8s ease-in-out;
+    z-index: 999;
+}
+.sidebar-main::-webkit-scrollbar{
+    display: none;
+}
+.sidebar-logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 24px 56px;
+}
+.sidebar-logo a{
+    color: #1C1C1C;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    padding-top: 1.5px;
+}
+.sidebar-open{
+    margin-top: 24px;
+    margin-left: 25px;
+}
+.sidebar-close, .sidebar-open{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+.sidebar-close:hover, .sidebar-open:hover{
+    background-color: #EBEEF0;
+    cursor: pointer;
+}
+.close-icon, .open-icon{
+    font-size: 20px;
+}
+.sidebar-menu{
+    padding-left: 24px;
+}
+.sidebar-menu h4{
+    color: #969696;
+    font-size: 12px;
+    padding: 4px 0;
+}
+.sidebar-body{
+    padding: 14px 24px 14px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.side-menu {
+    display: flex;
+    padding: 18.5px 24px;
+    gap: 11px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+.side-menu:hover{
+    background-color: #EBEEF0;
+}
+.side-menu img{
+    width: 16px;
+    height: 16px;
+}
+.side-menu p{
+    color: #181616;
+    font-weight: 500;
+}
+
+.sidebar-bottom{
+    padding: 8px;
+}
+.sidebar-bottom hr{
+    color: #969696;
+    border: 1px solid #969696;
+}
+
+.sidebar-open.active {
+    display: none;
+}
+
+.sidebar-close.active {
+    display: inline-flex;
+}
+.sidebar-close.active + .sidebar-open {
+    display: block;
+}
+
+.sidebar-main.active {
+    transform: translateX(0); 
+}
