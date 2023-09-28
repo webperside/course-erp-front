@@ -8,7 +8,7 @@ const CustomInput = ({ hint, placeholder, type, errorMsg, onChange, name ,value}
     onChange(name, inputValue, valid);
   };
   return (
-    <div className="form-group">
+    <div className="form-group" style={{marginBottom:"30px"}}>
       <label htmlFor={name}>{hint}</label>
       <input
         name={name}
@@ -18,7 +18,7 @@ const CustomInput = ({ hint, placeholder, type, errorMsg, onChange, name ,value}
         value={value}
         onChange={handleChange}
       />
-      {error && <span>{errorMsg}</span>}
+      <div>{error && <span style={{color:"red"}}>{errorMsg}</span>}</div>
     </div>
   );
 };

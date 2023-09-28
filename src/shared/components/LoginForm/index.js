@@ -20,7 +20,7 @@ const LoginForm = () => {
     setInputValues(initialInputState);
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}  style={{margin:"300px",textAlign:"center"}}>
       <CustomInput
         name="userName"
         id="userName"
