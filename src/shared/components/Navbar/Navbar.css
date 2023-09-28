@@ -6,10 +6,6 @@
   text-decoration: none;
   box-sizing: border-box;
 }
-header {
-  width: 1248px;
-  float: right;
-}
 nav {
   height: 80px;
   display: flex;
@@ -22,7 +18,7 @@ nav {
   align-items: center;
   justify-content: center;
   gap: 30px;
-  padding: 0 80px 0 0;
+  padding: 0 30px 0 0;
 }
 .notification {
   cursor: pointer;
@@ -38,6 +34,7 @@ nav {
     background-color: rgba(13,18,22,0.06);
     transition: 0.4s;
 }
+
 .badge {
   font-family: "Inter", sans-serif;
   width: 15px;
@@ -80,26 +77,45 @@ nav {
   font-size: 16px;
 }
 .page-property {
-  width: 338px;
+  width: 450px;
   height: 48px;
   padding: 8px;
   display: flex;
-  gap: 10px;
+  gap: 20px;
   justify-content: center;
   align-items: center;
 }
-.page-property .navbar-icon {
+.side-menu{
+  cursor: pointer;
+  margin-right: 20px;
+}
+.page-property .navbar-icon{
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:5px;
+}
+.page-property .navbar-icon span {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 32px;
-  height: 35px;
+  height: 34px;
   border-radius: 2px;
   background-color: #1e0202;
   color: rgba(255, 255, 255);
 }
+.page-property .navbar-icon p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1C1C1C;
+}
 .page-property .orientation {
   display: flex;
+  gap:8px;
 }
 .orientation .manufacturing,
 .subcategory {
@@ -107,7 +123,7 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 8px;
-  padding: 8px;
+  padding: 8px 0;
 }
 .orientation .manufacturing,
 .subcategory p {
