@@ -1,14 +1,14 @@
-import "./App.css";
+
+import { BrowserRouter as Router } from 'react-router-dom';
+import Sidebar from './components/sidebar/Sidebar';
 import Navbar from "./shared/components/Navbar/Navbar";
-import LoginForm from "./shared/components/LoginForm";
 function App() {
   return (
-    <div className="App">
-      <Navbar />
- <div className="">
- <LoginForm />
- </div>
-    </div>
-  );
+    <Router>
+      <Navbar/>
+      <Sidebar />
+    </Router>
+    );
 }
+
 export default App;
