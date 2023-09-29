@@ -3,7 +3,14 @@ import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight , faBars} from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
+import { useAppContext } from "../context/AppContext";
+
 const Navbar = () => {
+  const { isSidebarOpen, setIsSidebarOpen } = useAppContext();
+  const toggleSidebar = () => {
+    setIsSidebarOpen(true);
+  };
+
   const userData = {
     username: "Pixsellz", 
     notifications: 2, 
@@ -15,8 +22,8 @@ const Navbar = () => {
     <header role="banner">
     <nav>
       <div className="page-property">
-      <div className="side-menu">
-        <FontAwesomeIcon icon={faBars} size="xl" style={{color: "#000000",}} />
+      <div className={`sidebar-open ${isSidebarOpen ? 'active' : ''}`} onClick={toggleSidebar}>
+        <FontAwesomeIcon className="open-icon" icon={faBars} size="xl" style={{color: "#000000",}} />
         </div>
         <div className="navbar-icon">
           <span>A</span>

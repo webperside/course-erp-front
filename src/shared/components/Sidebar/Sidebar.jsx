@@ -1,25 +1,19 @@
-import React, { useState} from 'react'
+
 import { NavLink, Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';   
+import { faTimes } from '@fortawesome/free-solid-svg-icons';   
+import { useAppContext } from '../context/AppContext';
 import './Sidebar.css'
 
 export default function Sidebar() {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    const { isSidebarOpen, setIsSidebarOpen } = useAppContext();
 
-    const toggleSidebar = () => {
-        setIsSidebarOpen(!isSidebarOpen);
-    };
     const closeSidebar = () => {
         setIsSidebarOpen(false);
     };
 
     return (
         <main>
-            <div className={`sidebar-open ${isSidebarOpen ? 'active' : ''}`} onClick={toggleSidebar}>
-            <FontAwesomeIcon className='open-icon' icon={faEllipsisVertical} />
-            </div>
-            <div className='o'></div>
             <div className={`sidebar-main ${isSidebarOpen ? 'active' : ''}`}>
                 <div>
                     <div className='sidebar-logo'>
