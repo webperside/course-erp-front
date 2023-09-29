@@ -99,6 +99,12 @@ nav {
 .sidebar-open.active{
   display: inline-flex;
 }
+.sidebar-close.active {
+  display: inline-flex;
+}
+.sidebar-close.active + .sidebar-open {
+  display: block;
+}
 
 .page-property .navbar-icon{
   cursor: pointer;
