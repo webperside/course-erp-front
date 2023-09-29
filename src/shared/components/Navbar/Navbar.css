@@ -85,10 +85,27 @@ nav {
   justify-content: center;
   align-items: center;
 }
-.side-menu{
-  cursor: pointer;
-  margin-right: 20px;
+
+.sidebar-open {
+  padding: 15px ;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  margin-right: 5px;
 }
+.sidebar-open:hover {
+  background-color: #EBEEF0;
+  cursor: pointer;
+}
+.sidebar-open.active{
+  display: inline-flex;
+}
+.sidebar-close.active {
+  display: inline-flex;
+}
+.sidebar-close.active + .sidebar-open {
+  display: block;
+}
+
 .page-property .navbar-icon{
   cursor: pointer;
   display: flex;
