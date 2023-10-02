@@ -5,6 +5,7 @@ const Checkbox = ({title}) => {
   const [isChecked, setIsChecked] = useState(false);
   const [isValid, setIsValid] = useState(true);
     const [isRequired, setRequired] = useState(true);
+    
 
   const handleChange = () => {
     setIsChecked(!isChecked);
