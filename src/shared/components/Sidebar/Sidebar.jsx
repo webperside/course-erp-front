@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons';   
 import { useAppContext } from '../context/AppContext';
 import './Sidebar.css'
-
+import Notification from '../Notification/Notification'
 export default function Sidebar() {
     const { isSidebarOpen, setIsSidebarOpen } = useAppContext();
 
@@ -84,6 +84,7 @@ export default function Sidebar() {
                     </div>
                 </div>
             </div>
+            <Notification/>
         </main>
     )
 }

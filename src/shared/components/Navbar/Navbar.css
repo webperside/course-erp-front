@@ -19,7 +19,8 @@ nav {
   gap: 30px;
   padding: 0 30px 0 0;
 }
-.notification {
+.not-icon {
+  user-select: none;
   cursor: pointer;
   width: 40px;
   height: 40px;
@@ -29,8 +30,8 @@ nav {
   align-items: center;
   position: relative;
 }
-.notification:hover{
-    background-color: rgba(13,18,22,0.06);
+.not-icon:hover{
+    background-color: rgba(13,18,22,0.06) !important;
     transition: 0.4s;
 }
 
