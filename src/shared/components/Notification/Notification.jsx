@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Notification = () => {
   const { isNotificationOpen} = useNotificationContext();
-  const [notifications, setNotifications] = useState([
+  const [notifications] = useState([
     { id: 1, title: "Success", text: 'Anyone with access can view your invited visitors', image: "/images/succes.png", read: false },
     { id: 2, title: "Info", text: 'Anyone with access can view your invited visitors', image: '/images/info.png', read: false },
     { id: 3, title: "Success", text: 'Anyone with access can view your invited visitors', image: "/images/succes.png", read: true },
