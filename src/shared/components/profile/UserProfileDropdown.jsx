@@ -1,6 +1,6 @@
 import { Menu } from '@headlessui/react'
 
-export default function Dropdown() {
+export default function UserProfileDropdown() {
     const userData = {
         username: "Pixsellz", 
     };

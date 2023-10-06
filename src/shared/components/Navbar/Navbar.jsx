@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight , faBars} from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
 import { useAppContext } from "../context/AppContext";
-import Dropdown from "../profile/dropdown";
+import UserProfileDropdown from "../profile/UserProfileDropdown";
 
 const Navbar = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useAppContext();
@@ -59,7 +59,7 @@ const Navbar = () => {
         )}
         {username ? (
           <div className="user-part">
-            <Dropdown />
+            <UserProfileDropdown />
           </div>
         ) : (
           <div className="login">
