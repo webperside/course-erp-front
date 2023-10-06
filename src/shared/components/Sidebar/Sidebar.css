@@ -70,6 +70,7 @@ a{
 }
 .side-menu {
     display: flex;
+    align-items: center;
     padding: 18.5px 24px;
     gap: 11px;
     border-radius: 5px;
@@ -85,6 +86,7 @@ a{
 .side-menu p{
     color: #181616;
     font-weight: 500;
+    padding-top: 1.5px;
 }
 
 .sidebar-bottom{

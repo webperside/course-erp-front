@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight , faBars} from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
 import { useAppContext } from "../context/AppContext";
+import UserProfileDropdown from "../profile/UserProfileDropdown";
 
 const Navbar = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useAppContext();
@@ -16,7 +17,6 @@ const Navbar = () => {
     notifications: 2, 
   };
   const { username, notifications } = userData;
-  const firstLetter = username ? username.charAt(0) : "";
   const showNotification = username && true;
   return (
     <header role="banner">
@@ -59,8 +59,7 @@ const Navbar = () => {
         )}
         {username ? (
           <div className="user-part">
-            <div className="user-avatar">{firstLetter}</div>
-            <div className="user-name">{username}</div>
+            <UserProfileDropdown />
           </div>
         ) : (
           <div className="login">
