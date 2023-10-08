@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 
 
 const Checkbox = ({title}) => {
   const [isChecked, setIsChecked] = useState(false);
   const [isValid, setIsValid] = useState(true);
-    const [isRequired, setRequired] = useState(true);
+  
     
 
   const handleChange = () => {
@@ -19,7 +19,7 @@ const Checkbox = ({title}) => {
     <div>
       <label>
         [{isChecked ? 'click' : " "}]
-        {isRequired && <span style={{ color: "red" }}>*</span>}
+        { <span style={{ color: "red" }}>*</span>}
         <input
           type="checkbox"
           checked={isChecked}
