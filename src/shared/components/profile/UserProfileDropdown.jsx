@@ -1,8 +1,6 @@
 import { Menu } from "@headlessui/react";
 import "../profile/language_selectbox.css";
 import { useState } from "react";
-import { useRef } from "react";
-import { useEffect } from "react";
 
 export default function UserProfileDropdown() {
   const userData = {
@@ -49,27 +47,27 @@ export default function UserProfileDropdown() {
       <Menu.Items className="mt-2 py-2 w-48 bg-white border border-gray-200 shadow-lg rounded-lg absolute top-[60px] right-4">
         <Menu.Item>
           <>
-            <a
+            <label
               onClick={handleOpen}
               className="flex gap-3 px-4 items-center py-3 hover:bg-[#EBEEF0] text-gray-800 transition-colors"
             >
-              <img src={image} className="language_logo" alt="" />{" "}
-              {language}{" "}
+              <img src={image} className="language_logo" alt="" />
+              {language}
               <img
                 src="/images/Vector10.svg"
                 className={`open_arrow ${isOpen ? "open" : ""}`}
                 alt=""
               />
-            </a>
+            </label>
             {isOpen && (
-              <div className="selectbox_container">
+              <ul className="selectbox_container">
                 {languages.map(language => (
                     <Language select={e => handleSelect(e, language)} key={language.title} data={language}/>
                 ))}
                 <div className="flex items-center">
                    <button className="close_btn w-full" onClick={() => setIsOpen(false)}>Back</button>
                 </div>
-              </div>
+              </ul>
             )}
           </>
         </Menu.Item>
@@ -116,13 +114,13 @@ export default function UserProfileDropdown() {
   );
 }
 
-function Language({ select, data ,currentImg}) {
+function Language({ select, data}) {
   return (
-    <a
+    <li
       onClick={select}
       className="flex gap-3 px-4 items-center py-3 hover:bg-[#EBEEF0] text-gray-800 transition-colors"
     >
       <img src={data.image} className="flag" alt="" /> {data.title}
-    </a>
+    </li>
   );
 }
