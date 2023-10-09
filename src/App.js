@@ -1,18 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import Sidebar from './shared/components/Sidebar/Sidebar';
-import Navbar from "./shared/components/Navbar/Navbar";
+import { RouterProvider } from 'react-router-dom';
 import { AppContextProvider } from './shared/components/context/AppContext';
 import './tailwind.css'
+import Routes from './shared/routes/routes';
 
 function App() {
   return (
-    <Router>
+
       <AppContextProvider>
-        <Navbar />
-        <Sidebar />
+        <RouterProvider router={Routes} />
       </AppContextProvider>
-    </Router>
+
   );
 }
 
