@@ -19,7 +19,7 @@ export default function UserProfileDropdown() {
                     {({ active }) => (
                     <a
                         className="flex gap-3 px-4 py-3 hover:bg-[#EBEEF0] text-gray-800 transition-colors  "
-                        href="/dashboard"
+                        href="dashboard"
                     >
                         <img src="/images/Vector1.svg" alt="" />
                         Dashboard
