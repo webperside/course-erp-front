@@ -1,6 +1,6 @@
 import { Menu } from "@headlessui/react";
 import "../profile/language_selectbox.css";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function UserProfileDropdown() {
 
@@ -13,7 +13,6 @@ export default function UserProfileDropdown() {
     const [language, setLanguage] = useState("Language");
     const [image, setImage] = useState('/images/Vector9.svg')
     
-
     const languages = [
         {
             image: '/images/azerbaijan_flag.png',
@@ -28,6 +27,22 @@ export default function UserProfileDropdown() {
             title: 'Spanish'
         }
     ]
+
+    const dropdownRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        };
+    
+        document.addEventListener('click', handleClickOutside);
+    
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+        };
+    }, []);
 
     function handleOpen() {
         setIsOpen((isOpen) => !isOpen);
@@ -45,7 +60,7 @@ export default function UserProfileDropdown() {
             <div className="user-avatar">{firstLetter}</div>
             <div className="user-name">{username}</div>
         </Menu.Button>
-        <Menu.Items className="mt-2 py-2 w-48 bg-white border border-gray-200 shadow-lg rounded-lg absolute top-[60px] right-4">
+        <Menu.Items ref={dropdownRef} className="mt-2 py-2 w-48 bg-white border border-gray-200 shadow-lg rounded-lg absolute top-[60px] right-4">
             <Menu.Item>
             <>
                 <label
