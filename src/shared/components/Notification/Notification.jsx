@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -39,31 +37,22 @@ const Notification = () => {
   const unreadNotifications = notifications.filter(
     (notification) => !notification.read
   );
-
-  // useRef ile notification-box ref oluşturuluyor
   const notificationBoxRef = useRef(null);
-
-  // useEffect ile sayfa üzerindeki tıklamalar dinleniyor
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (
         !e.target.closest(".notification-box") &&
         !e.target.closest(".not-icon")
       ) {
-        // notification-box dışına tıklanıldığında isOpen state'i false yapılıyor
         setIsOpen(false);
       }
     };
-
-    // Event listener'ı eklemek için useEffect içinde kullanıyoruz
     document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
-      // Component kaldırıldığında event listener'ı kaldırıyoruz
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
   return (
     <div className="relative">
       {showNotification && (
@@ -87,9 +76,10 @@ const Notification = () => {
       )}
 
       {isOpen && (
-          <div
-           ref={notificationBoxRef}
-           className="notification-box absolute right-0 translate-x-20 top-8 mt-4 w-96 bg-white border border-gray-200 shadow-lg rounded-lg pt-1">
+        <div
+          ref={notificationBoxRef}
+          className="notification-box absolute right-0 translate-x-20 top-8 mt-4 w-96 bg-white border border-gray-200 shadow-lg rounded-lg pt-1"
+        >
           {notifications.map((notification, index) => (
             <div
               key={notification.id}
@@ -106,7 +96,9 @@ const Notification = () => {
                   />
                 </div>
                 <div className="flex-grow">
-                  <h4 className="text-base font-medium">{notification.title}</h4>
+                  <h4 className="text-base font-medium">
+                    {notification.title}
+                  </h4>
                   <p className="text-sm text-gray-500 w-max">
                     {notification.text}
                   </p>
@@ -138,11 +130,9 @@ const Notification = () => {
             </div>
           )}
         </div>
-     
       )}
     </div>
   );
 };
 
 export default Notification;
-
