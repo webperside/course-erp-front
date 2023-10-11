@@ -1,74 +1,72 @@
 import React from "react";
 import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleRight , faBars} from "@fortawesome/free-solid-svg-icons";
-import { faBell } from "@fortawesome/free-regular-svg-icons";
+import { faAngleRight, faBars } from "@fortawesome/free-solid-svg-icons";
 import { useAppContext } from "../context/AppContext";
+import Notification from "../Notification/Notification";
 import UserProfileDropdown from "../profile/UserProfileDropdown";
-
 const Navbar = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useAppContext();
+
   const toggleSidebar = () => {
     setIsSidebarOpen(true);
   };
-
   const userData = {
-    username: "Pixsellz", 
-    notifications: 2, 
+    username: "Pixsellz",
+    notifications: 2,
   };
-  const { username, notifications } = userData;
-  const showNotification = username && true;
+  const { username } = userData;
   return (
     <header role="banner">
-    <nav>
-      <div className="page-property">
-      <div className={`sidebar-open ${isSidebarOpen ? 'active' : ''}`} onClick={toggleSidebar}>
-        <FontAwesomeIcon className="open-icon" icon={faBars} size="xl" style={{color: "#000000",}} />
-        </div>
-        <div className="navbar-icon">
-          <span>A</span>
-          <p>ABC</p>
-        </div>
-        
-        <div className="orientation">
-          <div className="manufacturing">
+      <nav>
+        <div className="page-property">
+          <div
+            className={`sidebar-open ${isSidebarOpen ? "active" : ""}`}
+            onClick={toggleSidebar}
+          >
             <FontAwesomeIcon
-              icon={faAngleRight}
+              className="open-icon"
+              icon={faBars}
+              size="xl"
               style={{ color: "#000000" }}
             />
-            <p>Manufacturing</p>
           </div>
-          <div className="subcategory">
-            <FontAwesomeIcon
-              icon={faAngleRight}
-              style={{ color: "#000000" }}
-            />
-            <p>Ordering</p>
+          <div className="navbar-icon">
+            <span>A</span>
+            <p>ABC</p>
+          </div>
+
+          <div className="orientation">
+            <div className="manufacturing">
+              <FontAwesomeIcon
+                icon={faAngleRight}
+                style={{ color: "#000000" }}
+              />
+              <p>Manufacturing</p>
+            </div>
+            <div className="subcategory">
+              <FontAwesomeIcon
+                icon={faAngleRight}
+                style={{ color: "#000000" }}
+              />
+              <p>Ordering</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="header-actions">
-        {showNotification && (
-          <div className="notification">
-            <FontAwesomeIcon icon={faBell} size="xl" style={{ color: "#000000" }} />
-            {notifications > 0 && (
-              <span className="badge">{notifications}</span>
-            )}
-             {/* <span className="tooltip">Notifications</span> */}
-          </div>
-        )}
-        {username ? (
-          <div className="user-part">
-            <UserProfileDropdown />
-          </div>
-        ) : (
-          <div className="login">
-            <a href="/login">Login</a>
-          </div>
-        )}
-      </div>
-    </nav>
-  </header>
+        <div className="header-actions">
+          <Notification />
+          {username ? (
+            <div className="user-part">
+              <UserProfileDropdown />
+            </div>
+          ) : (
+            <div className="login">
+              <a href="/login">Login</a>
+            </div>
+          )}
+        </div>
+      </nav>
+    </header>
   );
 };
 
