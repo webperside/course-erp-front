@@ -28,7 +28,7 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 24px 56px;
+    padding: 24px 24px 24px;
 }
 .sidebar-logo a{
     color: #1C1C1C;
