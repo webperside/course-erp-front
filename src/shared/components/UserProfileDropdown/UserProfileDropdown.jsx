@@ -2,6 +2,7 @@ import { Menu } from "@headlessui/react";
 import "./language_selectbox.css";
 import { useState, useEffect, useRef } from "react";
 import { useAppContext } from "../context/AppContext";
+import { Link } from "react-router-dom";
 
 export default function UserProfileDropdown() {
 
@@ -91,35 +92,35 @@ export default function UserProfileDropdown() {
             <>
                 <Menu.Item>
                 {({ active }) => (
-                    <a
+                    <Link
                     className="flex gap-3 px-4 py-3 hover:bg-[#EBEEF0] text-gray-800 transition-colors  "
-                    href="/dashboard"
+                    to="/dashboard"
                     >
                     <img src="/images/Vector1.svg" alt="" />
                     Dashboard
-                    </a>
+                    </Link>
                 )}
                 </Menu.Item>
                 <Menu.Item>
                 {({ active }) => (
-                    <a
+                    <Link
                     className="flex gap-3 px-4 py-3 hover:bg-[#EBEEF0] text-gray-800 transition-colors"
-                    href="profile"
+                    to="profile"
                     >
                     <img src="/images/Vector7.svg" alt="" />
                     Profile
-                    </a>
+                    </Link>
                 )}
                 </Menu.Item>
                 <Menu.Item>
                 {({ active }) => (
-                    <a
+                    <Link
                     className="flex gap-3 px-4 py-3 hover:bg-[#EBEEF0] text-gray-800 transition-colors"
-                    href="/logout"
+                    to="/logout"
                     >
                     <img src="/images/Vector8.svg" alt="" />
                     Log out
-                    </a>
+                    </Link>
                 )}
                 </Menu.Item>{" "}
             </>
