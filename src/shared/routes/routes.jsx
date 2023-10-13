@@ -2,6 +2,9 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../components/Main/MainLayout";
 import Dashboard from "../pages/dashboard/Dashboard";
 import Orders from "../pages/orders/Orders";
+import Notification from "../components/Notification/Notification";
+import Profile from "../pages/profile/Profile";
+import Panel from "../pages/profile/profile-pages/Panel";
 
 const Routes = createBrowserRouter([
     {
@@ -15,6 +18,20 @@ const Routes = createBrowserRouter([
             {
                 path: "orders",
                 element: <Orders />
+            },
+            {
+                path: "notifications",
+                element: <Notification />
+            },
+            {
+                path: "profile",
+                element: <Profile/>,
+                children: [
+                    {
+                        path: "panel",
+                        element: <Panel />
+                    }
+                ]
             }
         ]
     }

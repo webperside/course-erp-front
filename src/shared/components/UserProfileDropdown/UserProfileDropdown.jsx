@@ -1,12 +1,11 @@
 import { Menu } from "@headlessui/react";
-import "../profile/language_selectbox.css";
+import "./language_selectbox.css";
 import { useState, useEffect, useRef } from "react";
+import { useAppContext } from "../context/AppContext";
 
 export default function UserProfileDropdown() {
 
-    const userData = {
-        username: "Pixsellz",
-    };
+    const { userData } = useAppContext();
     const { username } = userData;
     const firstLetter = username ? username.charAt(0) : "";
     const [isOpen, setIsOpen] = useState(false);
