@@ -57,7 +57,7 @@ export default function Dropdown() {
         </button>
 
         {isDropdownOpen && (
-          <div className="h-48 w-56 absolute  bg-white border border-gray-100 rounded shadow-md">
+          <div className="w-56 absolute  bg-white border border-gray-100 rounded shadow-md">
             <ul>
               {mockData.map((item, index) => (
                 <li
