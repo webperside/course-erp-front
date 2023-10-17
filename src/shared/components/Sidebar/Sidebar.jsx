@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons';   
 import { useAppContext } from '../context/AppContext';
 import './Sidebar.css'
-
+import Dropdown from '../dropdown/Dropdown'; 
 export default function Sidebar() {
     const { isSidebarOpen, setIsSidebarOpen } = useAppContext();
 
@@ -24,6 +24,7 @@ export default function Sidebar() {
                             <FontAwesomeIcon icon={faTimes} className='close-icon' />
                         </div>
                     </div>
+                    <Dropdown />
                     <div className='sidebar-menu'>
                         <h4>MAIN MENU</h4>
                         <div className='sidebar-body'>
