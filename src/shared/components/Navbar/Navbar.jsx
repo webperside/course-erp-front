@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight, faBars } from "@fortawesome/free-solid-svg-icons";
 import { useAppContext } from "../context/AppContext";
 import Notification from "../Notification/Notification";
-import UserProfileDropdown from "../profile/UserProfileDropdown";
+import UserProfileDropdown from "../UserProfileDropdown/UserProfileDropdown";
+
 const Navbar = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useAppContext();
 
