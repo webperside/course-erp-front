@@ -5,6 +5,7 @@ import Orders from "../pages/orders/Orders";
 import Notification from "../components/Notification/Notification";
 import Profile from "../pages/profile/Profile";
 import Panel from "../pages/profile/profile-pages/Panel";
+import NotificationSettings from "../pages/profile/profile-pages/NotificationSettings";
 
 const Routes = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const Routes = createBrowserRouter([
                     {
                         path: "panel",
                         element: <Panel />
+                    },
+                    {
+                        path: "notification-settings",
+                        element: <NotificationSettings />
                     }
                 ]
             }
