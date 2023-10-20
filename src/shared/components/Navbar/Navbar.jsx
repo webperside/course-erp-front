@@ -18,7 +18,7 @@ const Navbar = () => {
   };
   const { username } = userData;
   return (
-    <header role="banner">
+    <header role="banner" className="select-none">
       <nav>
         <div className="page-property">
           <div
