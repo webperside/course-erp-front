@@ -1,0 +1,59 @@
+form {
+   
+  margin: 50px auto;
+  max-width: 400px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 30px;
+ 
+  border-radius: 5px;
+}
+
+form span {
+  margin: 7px 0;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: 600;
+ 
+  
+ 
+}
+
+form .input_sect {
+  width: 100%;
+}
+
+form input {
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 100%;
+}
+form .foot {
+    margin: 30px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+form .foot a:hover{
+  text-decoration: underline;
+
+}
+form .foot button {
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+form .foot button:hover{
+  background-color: black;
+  color: white;
+}
