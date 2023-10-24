@@ -96,36 +96,53 @@ const AccountSettings = () => {
   return (
     <div className="container mx-auto p-8">
       <form onSubmit={handleSubmit} className="">
-      <div className="flex gap-6 mb-2 col-span-2 text-center items-center">
-      <div className="overflow-hidden cursor-pointer relative w-36 h-36 rounded-full mb-4 border border-blue-500 border-2" onClick={handleImageUpload}>
-        {profileImage ? (
-          <img
-            src={profileImage}
-            alt="Profile"
-            className="w-full h-full object-cover overflow-hidden"
-          />
-        ) : (
-          <div className={`w-full h-full ${isUploading ? "bg-blue-500" : "bg-blue-500"}`}>
-            {isUploading ? (
-              <div className="text-blue-500 animate-spin">
-                Download...
-              </div>
+        <div className="flex gap-6 mb-2 col-span-2 text-center items-center">
+          <div
+            className="overflow-hidden cursor-pointer relative w-36 h-36 rounded-full mb-4 border border-blue-500 border-2"
+            onClick={handleImageUpload}
+          >
+            {profileImage ? (
+              <img
+                src={profileImage}
+                alt="Profile"
+                className="w-full h-full object-cover overflow-hidden"
+              />
             ) : (
-              <div onClick={handleImageUpload}>
-                <img src="/images/avatar.png" alt="" />
+              <div className={"w-full h-full"}>
+                {isUploading ? (
+                  <div className="text-blue-500 animate-spin">Download...</div>
+                ) : (
+                  <div onClick={handleImageUpload}>
+                    <img src="/images/avatar.png" alt="" />
+                  </div>
+                )}
               </div>
             )}
           </div>
-        )}
-      </div>
-      <div className="flex space-x-4 h-8 align-center">
-        <button className="bg-blue-500 text-white px-6 rounded text-sm" onClick={handleImageUpload}>Upload New Profile</button>
-        {profileImage && (
-          <button className="bg-white text-blue-500 px-6 rounded text-sm border-2 border-blue-500" onClick={handleDeleteProfile}>Delete</button>
-        )}
-      </div>
-      <input type="file" id="profileImageInput" accept="image/*" className="hidden" onChange={handleImageInputChange} />
-    </div>
+          <div className="flex space-x-4 h-8 align-center">
+            <button
+              className="bg-blue-500 text-white px-6 rounded text-sm"
+              onClick={handleImageUpload}
+            >
+              Upload New Profile
+            </button>
+            {profileImage && (
+              <button
+                className="bg-white text-blue-500 px-6 rounded text-sm border-2 border-blue-500"
+                onClick={handleDeleteProfile}
+              >
+                Delete
+              </button>
+            )}
+          </div>
+          <input
+            type="file"
+            id="profileImageInput"
+            accept="image/*"
+            className="hidden"
+            onChange={handleImageInputChange}
+          />
+        </div>
         <div className="grid grid-cols-2 gap-4 text-xs">
           <div className="mb-2">
             <label
