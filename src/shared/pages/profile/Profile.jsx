@@ -2,9 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faUser } from "@fortawesome/free-regular-svg-icons"
 import { faGear, faHouseChimney, faRightFromBracket, faShare, faWallet } from "@fortawesome/free-solid-svg-icons";
 import { faCoffee,faQrcode } from "@fortawesome/free-solid-svg-icons";
-import { Link, Outlet } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useAppContext } from "../../components/context/AppContext";
-
+import AccountSettings from "../../components/AccountSettings/AccountSettings.jsx";
 export default function Profile() {
     const { userData } = useAppContext();
     const { username } = userData;
@@ -81,7 +81,7 @@ export default function Profile() {
                         </div>
                     </div> 
                     <div className="w-full h-auto flex justify-center p-2">
-                        <Outlet />
+                       <AccountSettings/>
                     </div>
                 </div>
             </div>
